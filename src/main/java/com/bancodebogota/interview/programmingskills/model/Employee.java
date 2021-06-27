@@ -26,6 +26,12 @@ public class Employee {
     @Column(name = "function")
     private String function;
 
+    @Column(name = "email")
+    private String email;
+
+    @Column(name = "phone")
+    private String phone;
+
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "boss_id")
     @JsonBackReference

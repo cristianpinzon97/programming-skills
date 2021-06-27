@@ -17,6 +17,10 @@ public class EmployeeDto {
 
     private String function;
 
+    private String email;
+
+    private String phone;
+
     private Employee boss;
 
     private List<Employee> employees;
