@@ -7,6 +7,9 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.util.List;
 
+/**
+ * DTO fot Employee
+ */
 @Getter
 @Setter
 public class EmployeeDto {

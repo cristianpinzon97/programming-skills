@@ -12,7 +12,6 @@ import java.util.stream.Collectors;
  * Permits also the mapping between lists
  * of different types
  *
- * @author Cristian Pinzon
  */
 public class ObjectMapperUtils {
 

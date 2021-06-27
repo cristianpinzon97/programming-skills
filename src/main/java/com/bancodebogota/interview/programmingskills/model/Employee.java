@@ -9,6 +9,10 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.util.List;
 
+
+/**
+ * Entity for Employee
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
