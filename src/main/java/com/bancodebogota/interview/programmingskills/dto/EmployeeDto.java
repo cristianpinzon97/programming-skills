@@ -11,7 +11,7 @@ import java.util.List;
 @Setter
 public class EmployeeDto {
 
-    private int id;
+    private Long id;
 
     private String fullName;
 

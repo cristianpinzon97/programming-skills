@@ -1,8 +1,18 @@
 server:
   port: ${PROGRAMMING_SKILLS_PORT:8080}
   servlet:
-   context-path: ${PROGRAMMING_SKILLS_CONTEXT_PATH:/api/bdb/v1}
+   context-path: ${PROGRAMMING_SKILLS_CONTEXT_PATH:/api/bdb/v1/}
 
 spring:
-  application:
-    name: @project.artifactId@
+  # Database
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:15432/employ_db
+    username: postgres
+    password: postgres
+  # JPA properties
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    database: postgresql

@@ -1,5 +1,7 @@
 package com.bancodebogota.interview.programmingskills.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,11 +13,12 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name="Employee")
 public class Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Long id;
 
     @Column(name = "fullname")
     private String fullName;
@@ -23,10 +26,14 @@ public class Employee {
     @Column(name = "function")
     private String function;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = true)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "boss_id")
+    @JsonBackReference
     private Employee boss;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "boss")
+
+    @OneToMany(mappedBy = "boss", fetch = FetchType.EAGER)
+    @JsonManagedReference
     private List<Employee> employees;
 
 }
