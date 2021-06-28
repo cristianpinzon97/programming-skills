@@ -14,7 +14,7 @@ jobs:
       - image: postgres:12.4-alpine
         environment:
           POSTGRES_USER: postgres
-          POSTGRES_DB: postgres
+          POSTGRES_DB: employ_db
           POSTGRES_PASSWORD: postgres
     steps:
       # Checkout the code as the first step.
